@@ -150,9 +150,9 @@ def rpc_loop():
                 ]
             )
         except Exception as e:
-            error_msg(text=f"Status: {type(e)}: {e}")
+            error_msg.config(text=f"Status: {type(e)}: {e}")
         finally:
-            error_msg(text="Status: Good")
+            error_msg.config(text="Status: Good")
         sleep(save_data["refresh_rate"])
 
 threading.Thread(target=rpc_loop, daemon=True).start()
